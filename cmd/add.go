@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"cmd/db"
 	"fmt"
 	"strings"
+	"task/db"
 
 	"github.com/spf13/cobra"
 )

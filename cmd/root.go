@@ -7,8 +7,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var version = "0.0.1"
+
 // rootCmd represents the base command when called without any subcommands
 var RootCmd = &cobra.Command{
-	Use:   "task",
-	Short: "Task is a CLI task manager",
+	Use:     "task",
+	Version: version,
+	Short:   "Task is a CLI task manager",
 }
