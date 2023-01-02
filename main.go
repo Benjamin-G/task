@@ -5,6 +5,7 @@ package main
 
 import (
 	"cmd/cmd"
+	"cmd/db"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -15,13 +16,15 @@ import (
 func main() {
 	home, _ := homedir.Dir()
 	dbPath := filepath.Join(home, "tasks.db")
-	fmt.Printf("%v\n", home)
-	fmt.Printf("%v\n", dbPath)
+
+	fmt.Println("Starting", dbPath)
+	must(db.Init(dbPath))
 	must(cmd.RootCmd.Execute())
 }
 
 func must(err error) {
 	if err != nil {
+		fmt.Println("Error: ", err)
 		fmt.Println(err.Error())
 		os.Exit(1)
 	}
