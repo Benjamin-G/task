@@ -13,3 +13,12 @@ Install task, get dependencies and build
 
   task
 ```
+
+Learning note:
+
+```bash
+go install
+```
+
+This command will generate the executable file of the project in the
+$GOPATH/bin folder.  
